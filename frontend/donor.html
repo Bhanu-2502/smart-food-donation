@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Donate Food</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+    <header>
+
+        <div class="logo">
+            🍲 FoodConnect
+        </div>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="donor.html">Donate Food</a>
+            <a href="ngo.html">Find Donations</a>
+        </nav>
+
+    </header>
+
+
+    <section class="form-section">
+
+        <h1>Donate Surplus Food</h1>
+
+        <p>
+            Help us connect your surplus food
+            with people who need it.
+        </p>
+
+
+        <form id="donationForm">
+
+            <input type="text" id="donor_name" placeholder="Hotel / Event / Donor Name" required>
+
+
+            <input type="text" id="food_name" placeholder="Food Name" required>
+
+
+            <input type="number" id="quantity" placeholder="Quantity (number of meals)" required>
+
+
+            <select id="food_type">
+
+                <option value="">
+                    Select Food Type
+                </option>
+
+                <option value="Vegetarian">
+                    Vegetarian
+                </option>
+
+                <option value="Non-Vegetarian">
+                    Non-Vegetarian
+                </option>
+
+                <option value="Mixed">
+                    Mixed
+                </option>
+
+            </select>
+
+
+            <input type="text" id="pickup_time" placeholder="Pickup Time">
+
+
+            <input type="text" id="address" placeholder="Pickup Address" required>
+
+
+            <button type="button" onclick="getLocation()">
+
+                📍 Use My Location
+
+            </button>
+
+
+            <p id="locationStatus">
+                Location not selected
+            </p>
+
+
+            <input type="hidden" id="latitude">
+
+            <input type="hidden" id="longitude">
+
+
+            <button type="submit" class="submit-btn">
+
+                Donate Food
+
+            </button>
+
+        </form>
+
+        <p id="message"></p>
+
+    </section>
+
+
+    <script src="donor.js"></script>
+
+</body>
+
+</html>
