@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Register - FoodConnect</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+    <header>
+
+        <div class="logo">
+            🍲 FoodConnect
+        </div>
+
+        <nav>
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <a href="login.html">
+                Login
+            </a>
+
+        </nav>
+
+    </header>
+
+
+    <section class="form-section">
+
+        <h1>Create Account</h1>
+
+        <p>
+            Join the FoodConnect network.
+        </p>
+
+
+        <form id="registerForm">
+
+
+            <input type="text" id="name" placeholder="Name / Organization Name" required>
+
+
+            <input type="email" id="email" placeholder="Email Address" required>
+
+
+            <input type="password" id="password" placeholder="Password" required>
+
+
+            <input type="tel" id="phone" placeholder="Phone Number">
+
+
+            <select id="role" required>
+
+                <option value="">
+                    Select Account Type
+                </option>
+
+                <option value="DONOR">
+                    Food Donor
+                </option>
+
+                <option value="NGO">
+                    NGO / Food Bank
+                </option>
+
+            </select>
+
+
+            <input type="text" id="address" placeholder="Address">
+
+
+            <button type="button" onclick="getLocation()">
+
+                📍 Use My Location
+
+            </button>
+
+
+            <p id="locationStatus">
+                Location not selected
+            </p>
+
+
+            <input type="hidden" id="latitude">
+
+
+            <input type="hidden" id="longitude">
+
+
+            <button type="submit" class="submit-btn">
+
+                Create Account
+
+            </button>
+
+        </form>
+
+
+        <p id="registerMessage"></p>
+
+    </section>
+
+
+    <script src="register.js"></script>
+
+</body>
+
+</html>

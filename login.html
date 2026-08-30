@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Smart Food Donation Network - Login</title>
+
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+
+        body {
+
+            min-height: 100vh;
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+
+            background:
+                linear-gradient(135deg,
+                    #e8f5e9,
+                    #c8e6c9);
+
+        }
+
+
+        .login-container {
+
+            width: 380px;
+
+            background: white;
+
+            padding: 35px;
+
+            border-radius: 15px;
+
+            box-shadow:
+                0 8px 25px rgba(0, 0, 0, 0.15);
+
+        }
+
+
+        .logo {
+
+            text-align: center;
+
+            font-size: 45px;
+
+            margin-bottom: 10px;
+
+        }
+
+
+        h1 {
+
+            text-align: center;
+
+            color: #2e7d32;
+
+            margin-bottom: 8px;
+
+        }
+
+
+        .subtitle {
+
+            text-align: center;
+
+            color: #666;
+
+            font-size: 14px;
+
+            margin-bottom: 25px;
+
+        }
+
+
+        .form-group {
+
+            margin-bottom: 18px;
+
+        }
+
+
+        label {
+
+            display: block;
+
+            margin-bottom: 7px;
+
+            font-weight: bold;
+
+            color: #333;
+
+        }
+
+
+        input,
+        select {
+
+            width: 100%;
+
+            padding: 12px;
+
+            border: 1px solid #ccc;
+
+            border-radius: 8px;
+
+            font-size: 15px;
+
+            outline: none;
+
+        }
+
+
+        input:focus,
+        select:focus {
+
+            border-color: #4caf50;
+
+        }
+
+
+        .login-btn {
+
+            width: 100%;
+
+            padding: 13px;
+
+            border: none;
+
+            border-radius: 8px;
+
+            background: #4caf50;
+
+            color: white;
+
+            font-size: 16px;
+
+            font-weight: bold;
+
+            cursor: pointer;
+
+            margin-top: 5px;
+
+        }
+
+
+        .login-btn:hover {
+
+            background: #388e3c;
+
+        }
+
+
+        .login-btn:disabled {
+
+            background: #9e9e9e;
+
+            cursor: not-allowed;
+
+        }
+
+
+        .register-link {
+
+            text-align: center;
+
+            margin-top: 20px;
+
+            font-size: 14px;
+
+            color: #555;
+
+        }
+
+
+        .register-link a {
+
+            color: #2e7d32;
+
+            text-decoration: none;
+
+            font-weight: bold;
+
+        }
+
+
+        .register-link a:hover {
+
+            text-decoration: underline;
+
+        }
+
+
+        .message {
+
+            text-align: center;
+
+            margin-top: 15px;
+
+            font-size: 14px;
+
+            display: none;
+
+        }
+
+
+        .error {
+
+            color: #d32f2f;
+
+        }
+
+
+        .success {
+
+            color: #2e7d32;
+
+        }
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <div class="login-container">
+
+
+        <div class="logo">
+            🍲
+        </div>
+
+
+        <h1>
+            Smart Food Donation
+        </h1>
+
+
+        <p class="subtitle">
+            Login to continue and help reduce food waste
+        </p>
+
+
+        <form id="loginForm">
+
+
+            <!-- EMAIL -->
+
+            <div class="form-group">
+
+                <label for="email">
+                    Email
+                </label>
+
+                <input type="email" id="email" placeholder="Enter your email" required>
+
+            </div>
+
+
+            <!-- PASSWORD -->
+
+            <div class="form-group">
+
+                <label for="password">
+                    Password
+                </label>
+
+                <input type="password" id="password" placeholder="Enter your password" required>
+
+            </div>
+
+
+            <!-- ROLE -->
+
+            <div class="form-group">
+
+                <label for="role">
+                    Login As
+                </label>
+
+                <select id="role" required>
+
+                    <option value="">
+                        Select Role
+                    </option>
+
+                    <option value="DONOR">
+                        Donor
+                    </option>
+
+                    <option value="NGO">
+                        NGO
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <!-- LOGIN BUTTON -->
+
+            <button type="submit" class="login-btn" id="loginButton">
+
+                Login
+
+            </button>
+
+
+        </form>
+
+
+        <!-- MESSAGE -->
+
+        <div id="message" class="message"></div>
+
+
+        <!-- REGISTER -->
+
+        <div class="register-link">
+
+            Don't have an account?
+
+            <a href="register.html">
+                Register here
+            </a>
+
+        </div>
+
+
+    </div>
+
+
+    <!-- =====================================================
+         LOGIN JAVASCRIPT
+         =====================================================
+
+         IMPORTANT:
+         The login logic is now handled by login.js.
+         There is NO duplicate inline login code here.
+    ====================================================== -->
+
+    <script src="login.js"></script>
+
+
+</body>
+
+</html>

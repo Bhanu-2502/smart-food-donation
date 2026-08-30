@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>NGO Dashboard - FoodConnect</title>
+
+    <!-- Main Website CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- NGO Dashboard CSS -->
+    <link rel="stylesheet" href="dashboard.css">
+
+</head>
+
+
+<body class="dashboard-page ngo-page">
+
+
+    <!-- =========================================================
+         NAVIGATION
+    ========================================================== -->
+
+    <header class="dashboard-header">
+
+        <a href="index.html" class="dashboard-logo">
+
+            <span class="logo-icon">🍲</span>
+
+            <span class="logo-food">Food</span>
+            <span class="logo-connect">Connect</span>
+
+        </a>
+
+
+        <nav class="dashboard-nav">
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <a href="#available">
+                Find Food
+            </a>
+
+            <a href="#accepted">
+                Accepted
+            </a>
+
+            <button type="button" onclick="logout()" class="logout-button">
+
+                Logout
+
+            </button>
+
+        </nav>
+
+    </header>
+
+
+
+    <!-- =========================================================
+         MAIN DASHBOARD
+    ========================================================== -->
+
+    <main class="dashboard-wrapper">
+
+
+        <!-- =====================================================
+             WELCOME
+        ====================================================== -->
+
+        <section class="dashboard-welcome">
+
+            <div class="welcome-small-title">
+
+                FOODCONNECT · NGO DASHBOARD
+
+            </div>
+
+
+            <h1>
+
+                Welcome,
+                <span id="ngoName">NGO</span> 🤝
+
+            </h1>
+
+
+            <p>
+
+                Find surplus food from nearby donors and help
+                connect it with people who need it.
+
+            </p>
+
+
+            <p>
+
+                Every collection helps reduce food waste
+                and supports our community.
+
+            </p>
+
+        </section>
+
+
+
+        <!-- =====================================================
+             STATISTICS
+        ====================================================== -->
+
+        <section class="dashboard-stats">
+
+
+            <!-- AVAILABLE -->
+
+            <div class="stat-box">
+
+                <div class="stat-icon">
+                    🍲
+                </div>
+
+                <div class="stat-information">
+
+                    <div class="stat-label">
+                        Available Food
+                    </div>
+
+                    <div class="stat-number" id="availableCount">
+
+                        0
+
+                    </div>
+
+                    <div class="stat-description">
+
+                        Donations currently available
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- ACCEPTED -->
+
+            <div class="stat-box">
+
+                <div class="stat-icon">
+                    🤝
+                </div>
+
+                <div class="stat-information">
+
+                    <div class="stat-label">
+                        Accepted
+                    </div>
+
+                    <div class="stat-number" id="acceptedCount">
+
+                        0
+
+                    </div>
+
+                    <div class="stat-description">
+
+                        Donations being coordinated
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- COLLECTED -->
+
+            <div class="stat-box">
+
+                <div class="stat-icon">
+                    ✓
+                </div>
+
+                <div class="stat-information">
+
+                    <div class="stat-label">
+                        Collected
+                    </div>
+
+                    <div class="stat-number" id="collectedCount">
+
+                        0
+
+                    </div>
+
+                    <div class="stat-description">
+
+                        Donations successfully received
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- =====================================================
+             AVAILABLE FOOD
+        ====================================================== -->
+
+        <section class="dashboard-section" id="available">
+
+
+            <div class="section-introduction">
+
+                <div class="section-icon">
+                    🍱
+                </div>
+
+
+                <div>
+
+                    <h2>
+                        Available Food Near You
+                    </h2>
+
+                    <p>
+
+                        Discover surplus food shared by donors
+                        and accept donations that your NGO can collect.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- JavaScript inserts donations here -->
+
+            <div id="availableDonationList" class="donation-list">
+
+                <div class="empty-state">
+
+                    <div class="empty-state-icon">
+                        🍲
+                    </div>
+
+                    <h3>
+                        Looking for available food...
+                    </h3>
+
+                    <p>
+                        Available donations will appear here.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- =====================================================
+             ACCEPTED FOOD
+        ====================================================== -->
+
+        <section class="dashboard-section" id="accepted">
+
+
+            <div class="section-introduction">
+
+                <div class="section-icon">
+                    🤝
+                </div>
+
+
+                <div>
+
+                    <h2>
+                        Accepted Donations
+                    </h2>
+
+                    <p>
+
+                        Track donations that your NGO has accepted
+                        and prepare them for collection.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- JavaScript inserts accepted donations here -->
+
+            <div id="acceptedDonationList" class="donation-list">
+
+                <div class="empty-state">
+
+                    <div class="empty-state-icon">
+                        🤝
+                    </div>
+
+                    <h3>
+                        No accepted donations yet
+                    </h3>
+
+                    <p>
+
+                        Donations you accept will appear here.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- =====================================================
+             COLLECTED FOOD
+        ====================================================== -->
+
+        <section class="dashboard-section" id="collected">
+
+
+            <div class="section-introduction">
+
+                <div class="section-icon">
+                    ✓
+                </div>
+
+
+                <div>
+
+                    <h2>
+                        Collected Donations
+                    </h2>
+
+                    <p>
+
+                        View food donations successfully collected
+                        by your NGO.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- JavaScript inserts collected donations here -->
+
+            <div id="collectedDonationList" class="donation-list">
+
+                <div class="empty-state">
+
+                    <div class="empty-state-icon">
+                        📦
+                    </div>
+
+                    <h3>
+                        No collected donations yet
+                    </h3>
+
+                    <p>
+
+                        Successfully collected donations
+                        will appear here.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- =========================================================
+         FOOTER
+    ========================================================== -->
+
+    <footer class="dashboard-footer">
+
+        <p>
+
+            © 2026 FoodConnect · Connecting surplus food
+            with communities in need.
+
+        </p>
+
+    </footer>
+
+
+
+    <!-- =========================================================
+         JAVASCRIPT
+    ========================================================== -->
+
+    <script src="ngo-dashboard.js"></script>
+
+
+</body>
+
+</html>
